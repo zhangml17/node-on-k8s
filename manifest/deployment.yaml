@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: kube-node-deployment
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: web-node
+    spec:
+      containers:
+        - name: node-web-demo
+          image: 192.168.100.167/test/node-web-demo:v1
+          ports:
+            - containerPort: 3000
