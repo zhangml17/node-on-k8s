@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: kube-node-ingress
+spec:
+  rules:
+  - host: gmt.nodetest.me
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: kube-node-service
+          servicePort: 3000
